@@ -4,13 +4,16 @@ Write three functions - encode, decode, and transmit - that transmits a message
 with RSA encryption. 
 """
 def encode(m, e, n):
-    return
+    return (m ** e) % n
 
 def decode(m, d, n):
-    return
+    return (m ** d) % n
 
 def transmit(message, e, d, n):
-    return
+    encrypted = encode(message, e, n)
+    print("Transmitting:", encrypted)
+    decrypted = decode(encrypted, d, n)
+    return decrypted
 
 """ Test 3 """
 def test_rsa():
